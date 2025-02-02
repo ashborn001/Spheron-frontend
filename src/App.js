@@ -23,7 +23,7 @@ export default function App() {
       console.log("Sending request:", requestData);
 
       axios
-        .post("http://localhost:5000/generate_yaml", requestData, {
+        .post("https://spheron-model.onrender.com/generate_yaml", requestData, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
