@@ -20,14 +20,12 @@ export default function App() {
       setIsLoading(true);
 
       const requestData = { question: userInput.trim() };
-      console.log("Sending request:", requestData);
 
       axios
         .post("https://spheron-model.onrender.com/generate_yaml", requestData, {
           headers: { "Content-Type": "application/json" },
         })
         .then((response) => {
-          console.log("Response received:", response.data);
           setServerMessage(response.data.yaml);
         })
         .catch((error) => {
